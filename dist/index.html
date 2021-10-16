@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Weather App</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js" type="module"></script>
+</head>
+<body>
+    <main class="fade-in">
+        <h1 class="offscreen">Responsive Weather App powered by Open Weather A P I</h1>
+        <section id="searchBar" class="searchBar fade-in">
+            <form action="" id="searchBar__form" class="searchBar__form" role="search">
+                <label for="searchBar__text" class="offscreen">Enter a new location</label>
+                <input id="searchBar__text" class="searchBar__text" type="text" role="searchbox" size="40" autocomplete="off" placeholder="City, State, Country">
+                <button id="searchBar__button" class="button searchBar__button" title="Submit Location" aria-label="Enter Zip code or City, State, and Country to retrieve weather condition">
+                    <i class="fa fa-search"></i>
+                    <i class="fas fa-sync fa-spin none"></i>
+                </button>
+            </form>
+        </section>
+        <a href="#currentForecast" class="skip-link">Skip to Current Conditions</a>
+        <section id="currentForecast" class="currentForecast fade-in" role="region" aria-labelledby="currentForecast__location">
+            <h2 id="currentForecast__location" class="currentForecast__location">Current Conditions</h2>
+            <div id="currentForecast__conditions" class="currentForecast__conditions">
+                
+            </div>
+        </section>
+        <a href="#dailyForecast" class="skip-link">Skip to Six Day Forecast</a>
+        <nav id="navButtons" class="navButtons fade-in">
+            <button id="getLocation" class="button" title="Get Location" aria-label="Get the current weather condtion for your current location">
+                <i class="fas fa-map-marker-alt"></i>
+                <i class="fas fa-sync fa-spin none"></i>
+            </button>
+            <button id="home" class="button" title="Home weather" aria-label="Get the current weather condtion for your home location">
+                <i class="fas fa-home"></i>
+                <i class="fas fa-sync fa-spin none"></i>
+            </button>
+            <button id="saveLocation" class="button" title="Save Location" aria-label="Save the current location as your home location">
+                <i class="fas fa-save"></i>
+                <i class="fas fa-sync fa-spin none"></i>
+            </button>
+            <button id="changeUnits" class="button" title="Toggle Measurement Units" aria-label="Toggle between metric and imperial measurement units">
+                <i class="fas fa-chart-bar"></i>
+                <i class="fas fa-sync fa-spin none"></i>
+            </button>
+            <button id="refresh" class="button" title="Refresh weather" aria-label="Refresh current weather conditions">
+                <i class="fas fa-redo"></i>
+                <i class="fas fa-sync fa-spin none"></i>
+            </button>
+        </nav>
+        <hr class="fade-in">
+        <section id="dailyForecast" class="dailyForecast fade-in" role="region" aria-labelledby="dailyForecast__title">
+            <h2 id="dailyForecast__title" class="dailyForecast__title offscreen  ">Six Day Forecast</h2>
+            <div id="dailyForecast__contents" class="dailyForecast__contents">
+                <div class="forecastDay">
+                    <p class="dayAbbreviation">SUN</p>
+                    <img src="https://openweathermap.org/img/wn/03d.png" alt="scattered">
+                    <p class="dayHigh">61&deg</p>
+                    <p class="dayLow">44&deg</p>
+                </div>
+                <div class="forecastDay">
+                    <p class="dayAbbreviation">MON</p>
+                    <img src="https://openweathermap.org/img/wn/03d.png" alt="scattered">
+                    <p class="dayHigh">62&deg</p>
+                    <p class="dayLow">45&deg</p>
+                </div>
+                <div class="forecastDay">
+                    <p class="dayAbbreviation">TUE</p>
+                    <img src="https://openweathermap.org/img/wn/04d.png" alt="scattered">
+                    <p class="dayHigh">58&deg</p>
+                    <p class="dayLow">36&deg</p>
+                </div>
+                <div class="forecastDay">
+                    <p class="dayAbbreviation">WED</p>
+                    <img src="https://openweathermap.org/img/wn/10d.png" alt="scattered">
+                    <p class="dayHigh">45&deg</p>
+                    <p class="dayLow">23&deg</p>
+                </div>
+                <div class="forecastDay">
+                    <p class="dayAbbreviation">THU</p>
+                    <img src="https://openweathermap.org/img/wn/10d.png" alt="scattered">
+                    <p class="dayHigh">45&deg</p>
+                    <p class="dayLow">25&deg</p>
+                </div>
+                <div class="forecastDay">
+                    <p class="dayAbbreviation">FRI</p>
+                    <img src="https://openweathermap.org/img/wn/09d.png" alt="scattered">
+                    <p class="dayHigh">50&deg</p>
+                    <p class="dayLow">40&deg</p>
+                </div>
+                <div class="forecastDay">
+                    <p class="dayAbbreviation">SAT</p>
+                    <img src="https://openweathermap.org/img/wn/03d.png" alt="scattered">
+                    <p class="dayHigh">60&deg</p>
+                    <p class="dayLow">44&deg</p>
+                </div>
+            </div>
+        </section>
+        <p id="confirmation" class="offscreen" aria-live="assertive"></p>
+    </main>
+</body>
+</html>
